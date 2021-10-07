@@ -1,0 +1,71 @@
+{{ define "body_class" }} post-template {{ end }}
+
+{{ define "main" }}
+
+{{- partial "header-light.html" $ -}}
+
+<main>
+    <article>
+
+            <section class="post-page-categories">
+                {{ with .Params.categories  }}
+                    {{ $primaryCat := (index . 0) }}
+                        <a href="{{ "/categories/" | relLangURL }}{{ $primaryCat | urlize }}">{{ $primaryCat }}</a> &nbsp;/&nbsp;
+                {{ end }}
+                {{ with .Params.series }}
+                    {{ $primarySerie := (index . 0) }}
+                        <a href="{{ "/series/" | relLangURL }}{{ $primarySerie | urlize }}">{{ $primarySerie }}</a>
+                {{ end }}
+            </section>
+
+            <h1>{{ .Title }}</h1>
+
+                {{ if .IsTranslated }}
+                <details>
+                <summary>{{ i18n "translations" }}</summary>
+                <ul>
+                    {{ range .Translations }}
+                    <li>
+                        <a href="{{ .Permalink }}">{{ .Lang | upper }} : {{ .Title }}{{ if .IsPage }}{{ end }}</a>
+                    </li>
+                    {{ end }}
+                </ul>
+                </details>
+                {{ end }}
+                <details>
+                <summary>{{ i18n "table_of_content" }}</summary>
+                    <div class="post-page-contents">
+                    {{.TableOfContents}}
+                    </div>
+                </details>
+
+            <section class="post-page-date-and-read">
+                <time datetime="{{ .Date | time.Format ":date_long" }}">{{ .Date | time.Format ":date_long" }}</time>
+                - {{ .ReadingTime }} {{ i18n "reading_time" }}
+            </section>
+
+
+        {{ if .Param "feature_image" }}
+        <figure class="post-page">
+            <img src="{{ .Param "feature_image" }}" alt="{{ .Title }}" />
+            {{ if .Param "feature_image_credit" }}
+                <figcaption>{{.Param "feature_image_credit" }}</figcaption>
+            {{ end }}
+        </figure>
+        {{ end }}
+
+        <section>
+            <div class="post-content">
+            {{ .Content }}
+            </div>
+        </section>
+
+        <section class="comments">
+            {{ i18n "footer_comment" }}
+        </section>
+
+    </article>
+</main>
+
+
+{{ end }}

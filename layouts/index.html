@@ -1,0 +1,19 @@
+{{ define "body_class" }} home-template {{ end }}
+
+{{ define "main" }}
+
+{{- partial "header.html" . -}}
+
+            <main>
+              {{ $pages := .Paginate (where site.RegularPages "Type" "in" site.Params.mainSections) site.Params.pagination }}
+              {{ range $index, $element := $pages.Pages }}
+              {{- partial "post-card.html" (dict "context" . "index" $index "home" $.IsHome) -}}
+              {{ end }}
+              <section class="pagination">
+                {{ $pages := .Paginate (where site.RegularPages "Type" "in" site.Params.mainSections) site.Params.pagination }}
+                {{ template "_internal/pagination.html" . }}
+                {{ range $index, $element := $pages.Pages }}
+                {{ end }}
+              </section>
+            </main>
+{{ end }}
