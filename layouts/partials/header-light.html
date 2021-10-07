@@ -5,5 +5,8 @@
         {{ range $.Site.Menus.main }}
         <a aria-current="page" class="header-light" href="{{ .URL }}">{{- .Name -}}</a>
         {{ end }}
+        {{ range $.Site.Home.AllTranslations }}
+        <a  href="{{ .Permalink }}">{{ .Language.LanguageName }}</a>
+        {{ end }}
     </nav>
 </header>

@@ -16,5 +16,8 @@ style="background-image: url('/images/background.jpg')"
         {{ range $.Site.Menus.main }}
         <a aria-current="page" href="{{ .URL }}">{{- .Name -}}</a>
         {{ end }}
+        {{ range $.Site.Home.AllTranslations }}
+        <a  href="{{ .Permalink }}">{{ .Language.LanguageName }}</a>
+        {{ end }}
     </nav>
 </header>
