@@ -651,7 +651,8 @@
   .post-content img {
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 3rem;
+    margin-top: 3rem;
+    margin-bottom: 1rem;
     display: block;
   }
 
