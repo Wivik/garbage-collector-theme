@@ -8,6 +8,8 @@ Supports pagination, multilingual, categories, and RSS generator.
 
 As I'm not a web developer, if some code parts of this theme makes your eyes bleed, please forgive me.
 
+![theme](theme.png)
+
 ## How to use
 
 Just clone this repository as a submodule of your Hugo site repository.
