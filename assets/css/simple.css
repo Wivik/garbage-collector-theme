@@ -645,13 +645,13 @@
   figure.post-page img {
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: 2rem;
     display: block;
   }
 
   .post-content img {
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 2rem;
     display: block;
   }
 
