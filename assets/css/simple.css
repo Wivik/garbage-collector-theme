@@ -2,7 +2,7 @@
 :root {
 
     /* Set sans-serif & mono fonts */
-    --sans-font: "Fira Sans", -apple-system, BlinkMacSystemFont, "Avenir Next", Avenir, "Nimbus Sans L", Roboto, Noto, "Segoe UI", Arial, Helvetica, "Helvetica Neue", sans-serif;
+    --sans-font: "fira_sansregular", -apple-system, BlinkMacSystemFont, "Avenir Next", Avenir, "Nimbus Sans L", Roboto, Noto, "Segoe UI", Arial, Helvetica, "Helvetica Neue", sans-serif;
     --mono-font: Consolas, Menlo, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
   
     /* Body font size. By default, effectively 18.4px, based on 16px as 'root em' */
@@ -49,9 +49,18 @@
     }
   }
 
-@font-face {
+/* @font-face {
   font-family: "Fira Sans";
   src: url('/assets/fonts/FiraSans-Regular.otf');
+} */
+
+@font-face {
+  font-family: 'fira_sansregular';
+  src: url('/assets/fonts/firasans-regular-webfont.woff2') format('woff2'),
+       url('/assets/fonts/firasans-regular-webfont.woff') format('woff');
+  /* font-weight: normal;
+  font-style: normal; */
+
 }
 
   html {
