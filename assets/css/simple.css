@@ -595,6 +595,19 @@
     text-decoration: none;
   }
 
+  /* normal header link for site title */
+
+  .site-title a {
+    border: none;
+    margin-top:0;
+    text-decoration: none;
+    color: var(--text);
+  }
+
+  .site-title a:hover {
+    color: var(--accent);
+  }
+
   /* custom header lightened */
 
   a.header-site-title {
