@@ -597,7 +597,7 @@
 
   /* normal header link for site title */
 
-  .site-title a {
+  a.site-title {
     border: none;
     margin-top:0;
     text-decoration: none;
