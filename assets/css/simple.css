@@ -15,6 +15,7 @@
     --line-height: 1.618;
   
     /* Default (light) theme */
+    /* inverted both becase I prefer dark theme by default */
     --bg: #212121;
     --accent-bg: #2B2B2B;
     --text: #DCDCDC;
@@ -29,7 +30,7 @@
   }
   
   /* Dark theme */
-  @media (prefers-color-scheme: dark) {
+  /* @media (prefers-color-scheme: dark) {
     :root {
         --bg: #FFF;
         --accent-bg: #F5F7FF;
@@ -47,7 +48,7 @@
     img, video {
       opacity: .6;
     }
-  }
+  } */
 
   html {
     /* Set the font globally */
