@@ -59,6 +59,8 @@ params:
   backgroundImage: "/images/background.jpg"
   ## number of posts per pages
   pagination: 10
+  ## set true or false to enable pagination or not
+  paginate: true
 
 languages:
   fr:

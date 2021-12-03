@@ -5,6 +5,7 @@
 {{- partial "header.html" . -}}
 
             <main>
+              {{ if site.Params.paginate }}
               {{ $pages := .Paginate (where site.RegularPages "Type" "in" site.Params.mainSections) site.Params.pagination }}
               {{ range $index, $element := $pages.Pages }}
               {{- partial "post-card.html" (dict "context" . "index" $index "home" $.IsHome) -}}
@@ -15,5 +16,11 @@
                 {{ range $index, $element := $pages.Pages }}
                 {{ end }}
               </section>
+              {{ else }}
+              {{ $pages := where site.RegularPages "Type" "in" site.Params.mainSections }}
+              {{ range $index, $element := $pages }}
+                  {{- partial "post-card.html" (dict "context" . "index" $index "home" $.IsHome) -}}
+              {{ end }}
+              {{ end }}
             </main>
 {{ end }}
