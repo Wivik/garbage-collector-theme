@@ -18,3 +18,7 @@ back_on_top:
 
 theme_url:
     other: 'Le thème visuel Garbage Collector est disponible sur '
+
+taxonomy_filled_under:
+    other: 'Articles classés dans  '
+
