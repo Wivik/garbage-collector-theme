@@ -10,11 +10,11 @@
             <section class="post-page-categories">
                 {{ with .Params.categories  }}
                     {{ $primaryCat := (index . 0) }}
-                        <a href="{{ "/categories/" | relLangURL }}{{ $primaryCat | urlize }}">{{ $primaryCat }}</a> &nbsp;/&nbsp;
+                        <a href="{{ "/categories/" | relLangURL }}{{ $primaryCat | urlize }}/">{{ $primaryCat }}</a> &nbsp;/&nbsp;
                 {{ end }}
                 {{ with .Params.series }}
                     {{ $primarySerie := (index . 0) }}
-                        <a href="{{ "/series/" | relLangURL }}{{ $primarySerie | urlize }}">{{ $primarySerie }}</a>
+                        <a href="{{ "/series/" | relLangURL }}{{ $primarySerie | urlize }}/">{{ $primarySerie }}</a>
                 {{ end }}
             </section>
 
